@@ -1,3 +1,5 @@
+# Copied and modified from: https://gist.github.com/mausch/168d09d18e354c8e47981b8e44746af9?permalink_comment_id=4343705#gistcomment-4343705
+
 #!/usr/bin/env bash
 
 STATUS="$(systemctl is-active docker.service)"
