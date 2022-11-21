@@ -1,0 +1,25 @@
+#!/bin/bash
+#Run game or given command in environment
+
+cd "/home/kagent/.games/mods/Fallout New Vegas/Mod.Organizer-2.4.4/"
+DEF_CMD=("/home/kagent/.games/mods/Fallout New Vegas/Mod.Organizer-2.4.4/ModOrganizer.exe")
+PATH="/home/kagent/.local/share/Steam/steamapps/common/Proton 6.3/dist/bin/:/usr/bin:/bin" \
+	TERM="xterm" \
+	WINEDEBUG="-all" \
+	WINEDLLPATH="/home/kagent/.local/share/Steam/steamapps/common/Proton 6.3/dist/lib64//wine:/home/kagent/.local/share/Steam/steamapps/common/Proton 6.3/dist/lib//wine" \
+	LD_LIBRARY_PATH="/home/kagent/.local/share/Steam/steamapps/common/Proton 6.3/dist/lib64/:/home/kagent/.local/share/Steam/steamapps/common/Proton 6.3/dist/lib/:/usr/lib/pressure-vessel/overrides/lib/x86_64-linux-gnu/aliases:/usr/lib/pressure-vessel/overrides/lib/i386-linux-gnu/aliases" \
+	WINEPREFIX="/home/kagent/.local/share/Steam/steamapps/compatdata/22380/pfx/" \
+	WINEESYNC="1" \
+	MANGOHUD="1" \
+	SteamGameId="22380" \
+	SteamAppId="22380" \
+	WINEDLLOVERRIDES="steam.exe=b;dotnetfx35.exe=b;beclient.dll=b,n;beclient_x64.dll=b,n;dxvk_config=n;d3d11=n;d3d10=n;d3d10core=n;d3d10_1=n;d3d9=n;dxgi=n" \
+	STEAM_COMPAT_CLIENT_INSTALL_PATH="/home/kagent/.local/share/Steam" \
+	WINE_LARGE_ADDRESS_AWARE="1" \
+	GST_PLUGIN_SYSTEM_PATH_1_0="/home/kagent/.local/share/Steam/steamapps/common/Proton 6.3/dist/lib64/gstreamer-1.0:/home/kagent/.local/share/Steam/steamapps/common/Proton 6.3/dist/lib/gstreamer-1.0" \
+	WINE_GST_REGISTRY_DIR="/home/kagent/.local/share/Steam/steamapps/compatdata/22380/gstreamer-1.0/" \
+	MEDIACONV_AUDIO_DUMP_FILE="/home/kagent/.local/share/Steam/steamapps/shadercache/22380/fozmediav1/audio.foz" \
+	MEDIACONV_AUDIO_TRANSCODED_FILE="/home/kagent/.local/share/Steam/steamapps/shadercache/22380/transcoded_audio.foz" \
+	MEDIACONV_VIDEO_DUMP_FILE="/home/kagent/.local/share/Steam/steamapps/shadercache/22380/fozmediav1/video.foz" \
+	MEDIACONV_VIDEO_TRANSCODED_FILE="/home/kagent/.local/share/Steam/steamapps/shadercache/22380/transcoded_video.foz" \
+	"/home/kagent/.local/share/Steam/steamapps/common/Proton 6.3/dist/bin/wine64" steam.exe "${@:-${DEF_CMD[@]}}"
